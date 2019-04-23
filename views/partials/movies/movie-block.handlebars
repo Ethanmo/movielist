@@ -1,0 +1,20 @@
+<li class="movie-block container">
+    <h4 class="row movie-title">{{title}}</h4>  
+    <div class="row details-block">
+        <div class="col m6 movie-img">
+            <img src="https://image.tmdb.org/t/p/w200{{poster_path}}">
+        </div>
+        <div class="col m6 movie-overview">
+            <p class="row movie-categories">
+                <div class="genre-div">
+                    {{#each genre_ids}}
+                        <span>{{this}}/</span>
+                    {{/each}}
+                </div>
+            </p>  
+            {{overview}}</div>
+    </div>
+    <button class="deleteMovie" data-movieId="{{id}}"><i class="fas fa-trash"></i></button>
+</li>
+
+

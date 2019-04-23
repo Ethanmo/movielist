@@ -1,3 +1,144 @@
+body {
+  background-image: url('../images/film-strip.jpg');
+  height: 100%;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+
+.header {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.modal-btn {
+  margin: 10px;
+}
+
+h1, h4 {
+  /* font-family: 'Righteous', cursive; */
+  font-family: 'Anton', sans-serif;
+  color: silver;
+  text-shadow: 2px 2px #161d20;  /* bunker */
+}
+
+.login {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.movie-poster {
+  width: 180px;
+  height: 240px;
+  margin-top: 20px;
+}
+
+.form-control {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.lgi {
+  color: silver;
+  background:#161d20; /* bunker */
+  font-size: 3ex;
+  padding: 8px;
+  margin: 4px;
+}
+
+.container {
+  background: #36498f;  /* chambray */
+  color: white;
+}
+
+#tmdb-search-results {
+  margin: 20px;
+}
+
+.search-container {
+  background:#161d20;  /* bunker */
+  padding: 20px;
+}
+
+.btn-lg {
+  width: 180px;
+}
+
+.selections {
+  background: #2d7c9d; /* jelly bean */
+  padding: 10px;
+}
+
+.jumbotron {
+  background: #2d7c9d; /* jelly bean */
+  border-color: #161d20;  /* bunker */
+  border-style: double;
+}
+
+.movieFooter {
+  height: 60px;
+  border-color: #161d20;  /* bunker */
+  border-style: double;
+}
+
+.btn-primary {
+  float: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.input-field {
+  background-color: #254558; /* blue dianne */
+  -webkit-text-fill-color: silver;
+  float: right;
+}
+
+#search-database {
+  margin-top: 20px;
+  float: right;
+  height: 40px;
+}
+
+.movie_poster {
+  margin-top: 10px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal a.close-modal[class*="icon-"] {
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  background: #900;
+  border: 2px solid #fff;
+  -webkit-border-radius:  26px;
+  -moz-border-radius:     26px;
+  -o-border-radius:       26px;
+  -ms-border-radius:      26px;
+  -moz-box-shadow:    1px 1px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
 }
