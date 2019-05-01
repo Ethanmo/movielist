@@ -15,5 +15,5 @@ CREATE TABLE watchlists
 	id int NOT NULL PRIMARY KEY,
 	list_name VARCHAR(50) NOT NULL,
 	movies JSON,
-	userId INT,
+	userId INT
 );

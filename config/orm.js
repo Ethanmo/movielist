@@ -3,7 +3,7 @@ var connection = require("./connection");
 var orm = {
 
     createList: function(listName, cover_img, cb){
-        var queryStr = "INSERT INTO atlas_db.watchlists (list_name, cover_img) VALUE (?, ?)";
+        var queryStr = "INSERT INTO xths8ekhhfojy9yg.watchlists (list_name, cover_img) VALUE (?, ?)";
         connection.query(queryStr, [listName, cover_img], function(err, result){
             if (err) throw err;
             cb(result);
@@ -13,7 +13,7 @@ var orm = {
     addMovies: function(listId, moviesArr, cb){
         console.log(moviesArr);
         var currentList;
-        var retrieveQuery = "Select movies FROM atlas_db.watchlists WHERE id = ?";
+        var retrieveQuery = "Select movies FROM xths8ekhhfojy9yg.watchlists WHERE id = ?";
         connection.query(retrieveQuery, [listId], function(err, result){
             var jsonArr = JSON.parse(result[0].movies);
             if (jsonArr == null){
@@ -22,7 +22,7 @@ var orm = {
                 currentList = jsonArr.concat(moviesArr);
             }
             currentList = JSON.stringify(currentList);
-            var queryStr = "UPDATE atlas_db.watchlists SET movies = ?, cover_img = ? WHERE id = ?";
+            var queryStr = "UPDATE xths8ekhhfojy9yg.watchlists SET movies = ?, cover_img = ? WHERE id = ?";
             var imgLink = "https://image.tmdb.org/t/p/w200" + moviesArr[0].poster_path;
             connection.query(queryStr, [currentList, imgLink, listId], function(err, result){
                 if (err) throw err;
@@ -32,7 +32,7 @@ var orm = {
     }, 
 
     deleteList: function(listId, cb){
-        var queryStr = "DELETE FROM atlas_db.watchlists WHERE id = ?";
+        var queryStr = "DELETE FROM xths8ekhhfojy9yg.watchlists WHERE id = ?";
         connection.query(queryStr, [listId], function(err, result){
             if (err) throw err; 
             cb(result);
@@ -40,7 +40,7 @@ var orm = {
     },
 
     getAllLists: function(cb){
-        var queryStr = "SELECT * FROM atlas_db.watchlists";
+        var queryStr = "SELECT * FROM xths8ekhhfojy9yg.watchlists";
         connection.query(queryStr, function(err, result){
             if (err) throw err;
             cb(result);
@@ -49,7 +49,7 @@ var orm = {
 
     deleteMovie: function(movieId, listId, cb){
         var currentArr;
-        var retrieveQuery = "SELECT movies FROM atlas_db.watchlists WHERE id = ?";
+        var retrieveQuery = "SELECT movies FROM xths8ekhhfojy9yg.watchlists WHERE id = ?";
         connection.query(retrieveQuery, [listId], function(err, result){
             if (err) throw err;
             var jsonArr = JSON.parse(result[0].movies);
@@ -57,7 +57,7 @@ var orm = {
             currentArr = deleteFromArr(jsonArr, movieId);
             currentArr = JSON.stringify(currentArr);
             //console.log(currentArr);
-            connection.query("UPDATE atlas_db.watchlists SET movies = ? WHERE id = ?", [currentArr, listId], function(err, result){
+            connection.query("UPDATE xths8ekhhfojy9yg.watchlists SET movies = ? WHERE id = ?", [currentArr, listId], function(err, result){
                 if (err) throw err;
                 cb(result);
             })
@@ -65,7 +65,7 @@ var orm = {
     },
 
     getAllMovies: function(listId, cb){
-        var queryStr = "SELECT movies FROM atlas_db.watchlists WHERE id = ?";
+        var queryStr = "SELECT movies FROM xths8ekhhfojy9yg.watchlists WHERE id = ?";
         connection.query(queryStr, [listId], function(err, result){
             if (err) throw err;
             cb(result);
@@ -73,7 +73,7 @@ var orm = {
     },
 
     showAllList: function(cb){
-        var queryStr = "SELECT id, list_name FROM atlas_db.watchlists";
+        var queryStr = "SELECT id, list_name FROM xths8ekhhfojy9yg.watchlists";
         connection.query(queryStr, function(err, result){
             if (err) throw err;
             cb(result);
